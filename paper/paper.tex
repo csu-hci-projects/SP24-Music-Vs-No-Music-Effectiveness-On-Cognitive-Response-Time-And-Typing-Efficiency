@@ -1,10 +1,10 @@
 \documentclass[sigconf]{acmart}
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
-    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}} %chktex 1
 
 \usepackage{etoolbox} 
-\apptocmd{\sloppy}{\hbadness 10000\relax} {}{}
+\apptocmd{\sloppy}{\hbadness 10000\relax} {}{} %chktex 1
 
 \usepackage[skip=6pt plus1pt]{parskip} %% add space between the paragraphs
 
@@ -55,10 +55,10 @@ abstract
 \keywords{Typing Efficiency with Music, Cognitive Function} % placeholder text for the time being
 \maketitle
 
-\section*{Introduction}
+\section{Introduction}
 Introduction
 
-\section*{Methodoloy}
+\section{Methodoloy}
 methods
 
 
