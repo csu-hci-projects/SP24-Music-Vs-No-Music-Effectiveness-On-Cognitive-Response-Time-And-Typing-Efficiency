@@ -26,20 +26,20 @@ class gui(tk.Tk):
         self.minsize(800, 600)
         self.maxsize(1000, 800)
 
-        header = tk.Label(text = "Typing Test") # label for the window - display purposes only
-        header.pack() # add the label to the window
+        self.header = tk.Label(text = "Typing Test") # label for the window - display purposes only
+        self.header.pack() # add the label to the window
 
-        start = tk.Button(self, text = "Start the Game", command=self.getFile) # need to change test to function to call filename
-        start.pack(side = "bottom", padx=10, pady=5)
+        self.start = tk.Button(self, text = "Start the Game", command=self.getFile) # need to change test to function to call filename
+        self.start.pack(side = "bottom", padx=10, pady=5)
 
     def getFile(self):
-        # tk.Button.destroy(self) # destroys the button that says "start the game"
         filename = wordBank()
         # print(filename)
         with open(filename, 'r') as file:
             original = file.read()
         label = tk.Label(self, text=original)
         label.pack()
+        self.start.destroy()
 
 def main():
     one = gui()
