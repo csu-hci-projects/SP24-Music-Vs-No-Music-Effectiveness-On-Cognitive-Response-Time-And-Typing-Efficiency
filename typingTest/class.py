@@ -17,8 +17,8 @@ class gui(tk.Tk):
         self.file = tk.Button(self, text = "Get the Typing Test", command=self.getFile)
         self.file.pack()
 
-        self.start = tk.Button(self, text = "Start", command=self.startUserInput)
-        self.start.pack(side = "bottom", padx=10, pady=5)
+        # self.start = tk.Button(self, text = "Start", command=self.startUserInput)
+        # self.start.pack(side = "bottom", padx=10, pady=5)
 
         self.typingWindow = tk.Frame(width=200, height=40, padx=5, pady=5)
         # self.typingWindow.place(x=100, y = 100)
@@ -65,11 +65,13 @@ class gui(tk.Tk):
         label = tk.Label(self, text=original)
         label.pack()
         self.file.destroy()
-
-    def startUserInput(self):
-        self.start.pack(side = "bottom", padx=10, pady=5)
+        # self.startUserInput()
         self.userInput()
-        self.start.destroy()
+
+    # def startUserInput(self):
+        # self.start.pack(side = "bottom", padx=10, pady=5)
+        # self.userInput()
+        # self.start.destroy()
     
     def userInput(self):
         print("userInput was called")
@@ -77,16 +79,23 @@ class gui(tk.Tk):
         self.typingArea.focus_set()
         self.startTime = time()
         self.done.pack()
-        self.checkResults()
+        # if self.done:
+        #     self.checkResults()
+
+    def speedAccuracy(self):
+        print("will check speed and accuracy")
+        # need to figure out how to exclude the click for the test to start
 
     def checkResults(self):
         if self.typingArea.get("1.0", 'end-1c') == self.song:
-            # self.endTime = time()
+            self.endTime = time()
             print("Good Job!")
+            self.done.destroy()
         else:
             self.endTime = time()
-            print(self.typingArea.get("1.0", 'end-1c'))
+            # print(self.typingArea.get("1.0", 'end-1c'))
             print(self.endTime - self.startTime)
+            print("hit else")
 
 def main():
     one = gui()
