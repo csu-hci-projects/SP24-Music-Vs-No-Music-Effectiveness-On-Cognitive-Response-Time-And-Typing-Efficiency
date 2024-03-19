@@ -1,4 +1,5 @@
-from time import time
+# from time import time
+import time
 import random
 import tkinter as tk
 
@@ -17,8 +18,8 @@ class gui(tk.Tk):
         self.file = tk.Button(self, text = "Get the Typing Test", command=self.getFile)
         self.file.pack()
 
-        self.start = tk.Button(self, text = "Start", command=self.startUserInput)
-        self.start.pack(side = "bottom", padx=10, pady=5)
+        # self.start = tk.Button(self, text = "Start", command=self.startUserInput)
+        # self.start.pack(side = "bottom", padx=10, pady=5)
 
         self.typingWindow = tk.Frame(width=200, height=40, padx=5, pady=5)
         # self.typingWindow.place(x=100, y = 100)
@@ -30,11 +31,13 @@ class gui(tk.Tk):
         self.done = tk.Button(self, text='Done', command=self.checkResults)
 
         self.song = ""
-        self.input = ""
-        self.countChar = 0
+        self.inputWords = []
+        self.inputFromUser = []
+        self.totalWords = len(self.inputWords)
         self.startTime = 0
         self.endTime = 0
-        self.finished = False
+        self.accuracy = 0
+
 
         self.mainloop()
 
@@ -58,35 +61,31 @@ class gui(tk.Tk):
         fileName = self.wordBank()
         with open(fileName, 'r') as file:
             original = file.read()
-            self.countChar += sum(len(char) for char in original) # will be used to calculate accuracy and speed?
             self.song = original
-        # print(self.countChar)
-        # print(self.song)
+            self.inputWords = original.split()
+            self.totalWords = len(self.inputWords)
         label = tk.Label(self, text=original)
         label.pack()
         self.file.destroy()
-
-    def startUserInput(self):
-        self.start.pack(side = "bottom", padx=10, pady=5)
         self.userInput()
-        self.start.destroy()
-    
+
     def userInput(self):
-        print("userInput was called")
         self.typingArea.pack(side='bottom')
         self.typingArea.focus_set()
-        self.startTime = time()
+        self.startTime = time.time()
         self.done.pack()
-        self.checkResults()
+
+    def userAccuracy(self):
+        temp = self.typingArea.get("1.0", 'end-1c')
+        self.inputFromUser = temp.split()
+        self.accuracy = sum(100 for x,y in zip(self.inputWords, self.inputFromUser) if x ==y) / self.totalWords
+        print(f'{self.accuracy:.3} accuracy')
 
     def checkResults(self):
-        if self.typingArea.get("1.0", 'end-1c') == self.song:
-            # self.endTime = time()
-            print("Good Job!")
-        else:
-            self.endTime = time()
-            print(self.typingArea.get("1.0", 'end-1c'))
-            print(self.endTime - self.startTime)
+        self.endTime = time.time()
+        self.done.destroy()
+        print("Attempt took",time.strftime("%H:%M:%S", time.gmtime(self.endTime - self.startTime)))
+        self.userAccuracy()
 
 def main():
     one = gui()
