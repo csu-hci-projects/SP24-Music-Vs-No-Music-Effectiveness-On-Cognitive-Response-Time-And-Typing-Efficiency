@@ -1,6 +1,8 @@
-\documentclass[sigconf]{acmart}
+\documentclass[manuscript, screen, review]{acmart} %removing review removes the numbers on left side
+% documentclass was [sigconf]{acmart} changed to match with the given overleaf link
+
 \AtBeginDocument{%
-  \providecommand\BibTeX{{%
+  \providecommand\BibTeX{{%  
     \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}} %chktex 1
 
 \usepackage{etoolbox} 
@@ -11,11 +13,17 @@
 \usepackage{graphicx} %% For pictures
 \usepackage[section]{placeins} %% used to keep the images in the section that I want them in
 
+\setcopyright{acmcopyright}
+\copyrightyear{2024}
+\acmYear{2024}
+\acmDOI{XXXXXXX.XXXXXXX}
+
 \begin{document}
 
 \title{Music Versus No Music Effectiveness On Cognitive Response Time and Typing Efficiency}
 
 \author{Jonquill Howlett}
+\email{jonquill.howlett@colostate.edu}
 \affiliation{%
   \institution{Colorado State University}
   \city{Berthoud}
@@ -23,9 +31,9 @@
   \country{USA}
   \postcode{80513-0650} %chktex 8
 }
-\email{jonquill.howlett@colostate.edu}
 
 \author{Lianna Hoag}
+\email{jonquill.howlett@colostate.edu} %update email 
 \affiliation{%
   \institution{Colorado State University}
   \city{Fort Collins}
@@ -33,9 +41,9 @@
   \country{USA}
   \postcode{80525-0650} %chktex 8 %the rest of the zip will need to be corrected
 }
-\email{jonquill.howlett@colostate.edu} %update email 
 
 \author{Shea Spalding}
+\email{jonquill.howlett@colostate.edu} %update email 
 \affiliation{%
   \institution{Colorado State University}
   \city{Fort Collins}
@@ -43,12 +51,12 @@
   \country{USA}
   \postcode{80525-0650} %chktex 8 %the rest of the zip will need to be corrected
 }
-\email{jonquill.howlett@colostate.edu} %update email 
 
-\renewcommand{\shortauthors}{J. Howlett} %I don't know how to format this for three authors
+\renewcommand{\shortauthors}{Howlett, Hoag, Spalding} %I don't know how to format this for three authors 
+% the template does not show any shortauthors
 
 \begin{abstract}
-abstract
+The abstract does not get added until after the project is finished or nearly finished.
 \end{abstract}
 
 \ccsdesc{Music, Typing Efficiency} % Update this
@@ -67,7 +75,7 @@ Multiple levels of music intensity may be utilized within each condition to asse
 
 Following the typing test, participants will proceed to the cognitive task component of the study, which will also be conducted under the three aforementioned conditions. % Further details on the cognitive task will be provided in subsequent sections. They will then move on the the QBTest?. % This will need to be re-written.
 
-This is a placeholder for a citation cos otherwise the compiler throws errors \cite{AudioDistractionsAshley}.
+This is a placeholder for a citation cos otherwise the compiler throws errors~\cite{AudioDistractionsAshley}.
 
 \subsection[short]{Participants}
 Participants
