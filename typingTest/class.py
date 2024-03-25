@@ -7,12 +7,12 @@ class gui(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.geometry("800x600") # Horizontal x Vertical
-        self.minsize(800, 600)
-        self.maxsize(1000, 800)
+        self.geometry("800x700+400+200") # Horizontal x Vertical
+        self.minsize(800, 700)
+        self.maxsize(1500, 800)
         self.title("Typing Test")
         self.config(padx=50, pady=10)
-        self.instructions = tk.Label(font=('Arial', 14),text = "Type the prompt. The timer start at the first keystroke. To end the timer, use the mouse to hit the text box.") 
+        self.instructions = tk.Label(wraplength=700, justify='center',font=('Arial', 14), text = "Type the prompt. The timer starts at the first keystroke. To end the typing portion, use the mouse to hit done. The QB test will then start.") 
         self.instructions.pack() # add the label to the window
 
         self.file = tk.Button(self, text = "Get the Typing Test", command=self.getFile)
