@@ -38,15 +38,9 @@ class gui(tk.Tk):
         self.endTime = 0
         self.accuracy = 0
 
-
         self.mainloop()
 
     def wordBank(self):
-        # one = "typingTest/lovestory"
-        # two = "typingTest/dontstopbelievin"
-        # three = "typingTest/yesterday"
-        # four = "typingTest/beforehecheats"
-        # five = "typingTest/hundredyears"
         one = "lovestory"
         two = "dontstopbelievin"
         three = "yesterday"
@@ -78,13 +72,18 @@ class gui(tk.Tk):
     def userAccuracy(self):
         temp = self.typingArea.get("1.0", 'end-1c')
         self.inputFromUser = temp.split()
-        self.accuracy = sum(100 for x,y in zip(self.inputWords, self.inputFromUser) if x ==y) / self.totalWords
-        print(f'{self.accuracy:.3} accuracy')
+        self.accuracy = (sum(1 for x,y in zip(self.inputWords, self.inputFromUser) if x ==y) / self.totalWords) * 100
+        if self.accuracy < 100:
+            accuracyLabel = tk.Label(self, text = f'{self.accuracy:.3}% accuracy')
+        else:
+            accuracyLabel = tk.Label(self, text = f'{self.accuracy}% accuracy')
+        accuracyLabel.pack()
 
     def checkResults(self):
         self.endTime = time.time()
         self.done.destroy()
-        print("Attempt took",time.strftime("%H:%M:%S", time.gmtime(self.endTime - self.startTime)))
+        timeLabel = tk.Label(self, text = f'Attempt took {time.strftime("%H:%M:%S", time.gmtime(self.endTime - self.startTime))}')
+        timeLabel.pack()
         self.userAccuracy()
 
 def main():
