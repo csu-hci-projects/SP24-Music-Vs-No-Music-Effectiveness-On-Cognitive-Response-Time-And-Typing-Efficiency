@@ -25,7 +25,7 @@ class gui(tk.Tk):
         # self.typingWindow.place(x=100, y = 100)
         self.typingWindow.pack(side = 'bottom')
 
-        self.typingArea = tk.Text(self.typingWindow, wrap='w', padx=5, pady=5, fg='green', bg='black')
+        self.typingArea = tk.Text(self.typingWindow, wrap='w', padx=5, pady=5, fg='black', bg='white')
         self.typingArea.pack()
 
         self.done = tk.Button(self, text='Done', command=self.checkResults)
