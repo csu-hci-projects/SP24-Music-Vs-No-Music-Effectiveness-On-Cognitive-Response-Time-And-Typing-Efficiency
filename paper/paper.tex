@@ -1,5 +1,6 @@
 \documentclass[manuscript, screen, review]{acmart} %removing review removes the numbers on left side
-% documentclass was [sigconf]{acmart} changed to match with the given overleaf link
+% \documentclass was [sigconf]{acmart} changed to match with the given overleaf link
+% \documentclass[sigconf]{acmart}
 
 \AtBeginDocument{%
   \providecommand\BibTeX{{%  
@@ -11,6 +12,7 @@
 \usepackage[skip=6pt plus1pt]{parskip} %% add space between the paragraphs
 
 \usepackage{graphicx} %% For pictures
+\graphicspath{{./pics/}}
 \usepackage[section]{placeins} %% used to keep the images in the section that I want them in
 
 \setcopyright{acmcopyright}
@@ -54,7 +56,7 @@ The abstract does not get added until after the project is finished or nearly fi
 \maketitle
 
 \section{Introduction}
-This project will focus on people's ability to type with distractions such as different types of music playing. Then it will test their cognitive ability to focus on a hand/eye coordination test in which we will test how well they can match shapes by measuring speed and accuracy. 
+This project will focus on people's ability to type with distractions such as different types of music playing. It will then test their cognitive ability to focus on a hand/eye coordination test in which we will test how well they can match shapes by measuring speed and accuracy. 
 The two-part test aims to help test if the music is too distracting or will help the people be more efficient at their work. 
 This is important because many people do their homework or jobs while listening to music and should they make a mistake, it could end up costing someone their grade or the mistake at work has a cascading effect to cause more errors in their work. 
 The two-part test will help determine if there is a correlation between the effectiveness of music versus no music on cognitive response time and typing efficiency.
@@ -78,15 +80,32 @@ By measuring typing speed and accuracy under conditions of music with lyrics, mu
 % \section{Related Works}
 
 \section{Methodology}
-% After obtaining consent from all participants, they will proceed to take the typing test. The test will present lyrics from popular songs within a graphical user interface (GUI). 
 After obtaining consent from all participants, they proceeded to take the typing test. The test presented lyrics from popular songs within a graphical user interface (GUI). 
-% The interface will automatically calculate typing speed and accuracy in the program's backend, allowing participants to focus solely on completing the test. Each participant will complete the typing test under three conditions: Music with lyrics, Music without lyrics, and No music (silent condition).
 The interface automatically calculated typing speed and accuracy in the program's backend, allowing participants to focus soley on completing the test.
 Each participant completed the typing test under three conditions: music with lyrics, music without lyrics, and no music (silent condition).
-% Multiple levels of music intensity may be utilized within each condition to assess varying degrees of distraction.
 Multiple levels of music intensity were utilized within each condition to assess varying degrees of distraction.
+The GUI of the typing test was built with simplicity in mind. The starting window was pulled up so as not to confuse participants with the code as seen in Figure 1. The participants saw Figure 2 while the test is running, while Figure 3 is the signifier that the typing portion is finished. 
 
-% Following the typing test, participants will proceed to the cognitive task component of the study, which will also be conducted under the three aforementioned conditions.
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{typing_test_1}
+  \caption{Starting window of typing test}
+  \Description{Image of the starting windows of the typing test}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{typing_test_2}
+  \caption{Test started}
+  \Description{Image of the test with the lyrics that the user will type}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{typing_test_3}
+  \caption{Test finished}
+  \Description{Image of the finished test}
+\end{figure}
+
+They were given the instructions in the GUI with the text area where their text goes clearly visible and the only button in the window to start the test and timer. After they hit the ``Get the Typing Test'' button, the lyrics of the randomly selected songs were displayed for the user to type. The text box for the users was already in focus with a ``Done'' button. After the users hit ``Done'', their accuracy and speed were presented.
+
 Following the typing test, participants proceeded to to the cognitive task component of the study, which were also conducted under the three aforementioned conditions. While the participants did the cognitive task of a quantified behavioral test, they wore the EyeWriter 2.0 glasses that we specially built for this study.
 % Further details on the cognitive task will be provided in subsequent sections. They will then move on the the QBTest?. % This will need to be re-written.
 
@@ -94,17 +113,23 @@ Following the typing test, participants proceeded to to the cognitive task compo
 This is a placeholder for a citation cos otherwise the compiler throws errors~\cite{AudioDistractionsAshley}.
 
 \subsection[short]{Participants}
-Participants
+Approximately twenty participants were recruited from Colorado State University. Ten males and ten females all in the age range of 18-99. There were no %chktex 8
+restrictions in regards to their major as long as they were able to type on a keyboard with no tilt on the keys.
+They have all previously either learned to type at primary school or through necessity.
 
-\subsection[short]{Apparatus}
+\subsection[short]{Apparatus}  % Do we want to change this to Equipment? 
+% This may not need to be broken into subsections. Will decide before we resubmit. 
+Participants used two different Macbook Pros in this study. One Macbook ran the typing test while the other was used for the QBTest. 
+The keyboard on the second Macbook was inaccessible as the eye tracker positioning would block the majority of the keys should they have 
+taken the typing test and QBTest on a singular device.
 
 \subsubsection{EyeWriter 2.0}
 \subsubsection{QB Test}
 \subsubsection{Typing Test}
-The typing program was written in Python and compiled using Python3.9. While python can run on any device that has python installed, this study only used Macbook Pros running on Sonoma or MacOS 14. The singularity of the devices was used as the center of the screen for the typing test was hard coded when setting the starting position of the window for the typing test.
+The typing program was written in Python and compiled using Python3.9. While python can run on any device that has python installed, this study only used Macbook Pros running on Sonoma or MacOS 14. The singularity of the devices was used as the center of the screen for the typing test was hard coded when setting the starting position of the window for the typing test. 
 
 \subsection[short]{Procedure}
-Procedure
+Procedure 
 
 \subsection[short]{Design}
 Design
