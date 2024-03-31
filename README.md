@@ -27,4 +27,4 @@ Jonquill and Shea both worked on the paper.
 For future contributions:
 Jonquill and Shea will both work on the paper.
 Shea will finish the eye tracker.
-Jonquill will assist in the qb test and start the procedure for actually recruiting participants.
+Jonquill will work on qb test and start the procedure for actually recruiting participants.
