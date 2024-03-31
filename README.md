@@ -23,8 +23,3 @@ For teams meetings:
 Jonquill worked on the typing test.
 Shea worked on the eye tracker of putting it together physically and the code for the eye tracker.
 Jonquill and Shea both worked on the paper.
-
-For future contributions:
-Jonquill and Shea will both work on the paper.
-Shea will finish the eye tracker.
-Jonquill will assist in the qb test and start the procedure for actually recruiting participants.
