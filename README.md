@@ -8,7 +8,7 @@ Using Python3.9, the package tkinter should already be installed.
 To run the program, the user should be in the folder called typingTest and call python3 class.py 
 
 We ran our Latex locally so we do not have an Overleaf link.
-* Youtube link: 
+* Youtube link: https://youtu.be/FlhF1GsQyts 
 
 For teams meetings:
 * 2/6 for 60 minutes
