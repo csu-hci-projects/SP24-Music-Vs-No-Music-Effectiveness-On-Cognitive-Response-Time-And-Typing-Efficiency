@@ -1,0 +1,3 @@
+To run the code use: python3 qb_test.py
+To install pygame use(if on linux): pip3 install --user pygame
+

@@ -1,5 +1,13 @@
 import pygame # type: ignore
 import random
+import sys
+
+print("Python Interpreter:", sys.executable)
+print("Python Version:", sys.version)
+print("Module Search Paths:")
+
+for path in sys.path:
+    print(path)
 
 # Initialize pygame
 pygame.init()
