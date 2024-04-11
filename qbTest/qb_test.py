@@ -1,13 +1,6 @@
-import pygame
+import pygame # type: ignore
 import random
 import sys
-
-print("Python Interpreter:", sys.executable)
-print("Python Version:", sys.version)
-print("Module Search Paths:")
-
-for path in sys.path:
-    print(path)
 
 # Initialize pygame
 pygame.init()
@@ -20,7 +13,6 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
-SHAPE_COLORS = [RED, GREEN, BLUE]
 SHAPE_RADIUS = 50
 FLASH_TIME = 1.0  # Time in seconds for each shape to flash
 
@@ -33,46 +25,47 @@ def display_text(screen, text, font, color, position):
 # Main function to run the QB test
 def run_qb_test():
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("QB Test - Press Space for Correct Color")
+    pygame.display.set_caption("QB Test - Press Space for Red")
 
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 36)
     running = True
-    current_color = random.choice(SHAPE_COLORS)
-    start_time = pygame.time.get_ticks()
-    correct_shape_displayed = False
 
     while running:
         screen.fill(WHITE)
-        current_time = (pygame.time.get_ticks() - start_time) / 1000.0
 
-        # Display flashing shape
+        # Generate a random color for the shape
+        current_color = random.choice([RED, GREEN, BLUE])
+
+        # Display flashing shape (circle)
+        current_time = pygame.time.get_ticks() / 1000.0  # Convert to seconds
         if current_time % (2 * FLASH_TIME) < FLASH_TIME:
             pygame.draw.circle(screen, current_color, (WIDTH // 2, HEIGHT // 2), SHAPE_RADIUS)
 
-        # Check for user input
+        # Display instructions and feedback text
+        display_text(screen, "Press Space when you see RED", font, BLACK, (WIDTH // 2, HEIGHT - 50))
+
+        # Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     if current_color == RED:
-                        correct_shape_displayed = True
+                        display_text(screen, "Correct!", font, GREEN, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
                     else:
-                        correct_shape_displayed = False
+                        display_text(screen, "Wrong!", font, RED, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
 
-        # Display instructions and feedback
-        display_text(screen, "Press Space when you see RED", font, BLACK, (WIDTH // 2, HEIGHT - 50))
+        pygame.display.flip()  # Update display
+        clock.tick(FPS)  # Cap the frame rate
 
-        if correct_shape_displayed:
-            display_text(screen, "Correct!", font, GREEN, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
-        else:
-            display_text(screen, "Wrong!", font, RED, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
-
-        pygame.display.flip()
-        clock.tick(FPS)
-
-    pygame.quit()
+    pygame.quit()  # Clean up resources
 
 # Run the QB test
-run_qb_test()
+if __name__ == "__main__":
+    try:
+        run_qb_test()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        pygame.quit()
+        sys.exit(1)
