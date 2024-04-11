@@ -1,6 +1,7 @@
-import pygame # type: ignore
+import pygame 
 import random
 import sys
+import time  # Import the time module for timing
 
 # Initialize pygame
 pygame.init()
@@ -9,12 +10,12 @@ pygame.init()
 WIDTH, HEIGHT = 800, 600
 FPS = 60
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 SHAPE_RADIUS = 50
 FLASH_TIME = 1.0  # Time in seconds for each shape to flash
+PAUSE_TIME = 0.5  # Time in seconds to pause between flashes
 
 # Function to display text on the screen
 def display_text(screen, text, font, color, position):
@@ -30,20 +31,33 @@ def run_qb_test():
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 36)
     running = True
+    last_flash_time = time.time()  # Track the last time a shape was flashed
+    flash_complete = True  # Flag to track if a flash cycle is complete
 
     while running:
         screen.fill(WHITE)
 
-        # Generate a random color for the shape
-        current_color = random.choice([RED, GREEN, BLUE])
+        current_time = time.time()
 
-        # Display flashing shape (circle)
-        current_time = pygame.time.get_ticks() / 1000.0  # Convert to seconds
-        if current_time % (2 * FLASH_TIME) < FLASH_TIME:
+        if flash_complete:
+            # Generate a random color for the shape
+            current_color = random.choice([RED, GREEN, BLUE])
+            flash_complete = False
+            last_flash_time = current_time  # Reset the last flash time
+
+        # Determine if it's time to show the shape or pause
+        if current_time - last_flash_time < FLASH_TIME:
+            # Display flashing shape (circle)
             pygame.draw.circle(screen, current_color, (WIDTH // 2, HEIGHT // 2), SHAPE_RADIUS)
+        elif current_time - last_flash_time < FLASH_TIME + PAUSE_TIME:
+            # Pause between flashes
+            pass
+        else:
+            # Reset for the next flash cycle
+            flash_complete = True
 
         # Display instructions and feedback text
-        display_text(screen, "Press Space when you see RED", font, BLACK, (WIDTH // 2, HEIGHT - 50))
+        display_text(screen, "Press Space when you see RED", font, (0, 0, 0), (WIDTH // 2, HEIGHT - 50))
 
         # Event handling
         for event in pygame.event.get():
