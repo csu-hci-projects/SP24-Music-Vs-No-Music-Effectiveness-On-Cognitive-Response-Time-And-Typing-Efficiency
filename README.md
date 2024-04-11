@@ -10,13 +10,15 @@ To run the program, the user should be in the folder called typingTest and call 
 We ran our Latex locally so we do not have an Overleaf link.
 * Youtube link: [https://youtu.be/FlhF1GsQyts ](https://youtu.be/JxySD7mxmlA)
 
-For teams meetings:
+For teams or in-person meetings:
 * 2/6 for 60 minutes
 * 2/12 
 * 2/15 for 44 minutes
 * 2/26 for 23 minutes 
 * 3/21 for 33 minutes
 * 3/28 for 23 minutes
+* 4/08 for 30 minutes
+* 4/11 for 90 minutes
 * messages in teams throughout the entire week of Monday - Friday since the team was formed.
 
 
