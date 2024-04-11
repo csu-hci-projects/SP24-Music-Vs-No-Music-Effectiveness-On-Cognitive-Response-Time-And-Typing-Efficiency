@@ -16,12 +16,14 @@ BLUE = (0, 0, 255)
 SHAPE_RADIUS = 50
 FLASH_TIME = 1.0  # Time in seconds for each shape to flash
 PAUSE_TIME = 0.5  # Time in seconds to pause between flashes
+FEEDBACK_DISPLAY_TIME = 2.0  # Time in seconds to display feedback (Correct or Wrong)
 
 # Function to display text on the screen
 def display_text(screen, text, font, color, position):
     text_surface = font.render(text, True, color)
     text_rect = text_surface.get_rect(center=position)
     screen.blit(text_surface, text_rect)
+    return text_surface.get_rect()
 
 # Main function to run the QB test
 def run_qb_test():
@@ -32,7 +34,9 @@ def run_qb_test():
     font = pygame.font.Font(None, 36)
     running = True
     last_flash_time = time.time()  # Track the last time a shape was flashed
+    last_feedback_time = 0.0  # Track the last time feedback was displayed
     flash_complete = True  # Flag to track if a flash cycle is complete
+    feedback_displayed = False  # Flag to track if feedback is currently displayed
 
     while running:
         screen.fill(WHITE)
@@ -56,19 +60,31 @@ def run_qb_test():
             # Reset for the next flash cycle
             flash_complete = True
 
-        # Display instructions and feedback text
+        # Display instructions
         display_text(screen, "Press Space when you see RED", font, (0, 0, 0), (WIDTH // 2, HEIGHT - 50))
+
+        # Check for feedback display
+        if current_time - last_feedback_time < FEEDBACK_DISPLAY_TIME and feedback_displayed:
+            # Display the feedback message (Correct or Wrong)
+            display_text(screen, feedback_message, font, feedback_color, feedback_position)
+        else:
+            feedback_displayed = False
 
         # Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE and not feedback_displayed:
                     if current_color == RED:
-                        display_text(screen, "Correct!", font, GREEN, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
+                        feedback_message = "Correct!"
+                        feedback_color = GREEN
                     else:
-                        display_text(screen, "Wrong!", font, RED, (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50))
+                        feedback_message = "Wrong!"
+                        feedback_color = RED
+                    feedback_position = (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50)
+                    last_feedback_time = current_time
+                    feedback_displayed = True
 
         pygame.display.flip()  # Update display
         clock.tick(FPS)  # Cap the frame rate
