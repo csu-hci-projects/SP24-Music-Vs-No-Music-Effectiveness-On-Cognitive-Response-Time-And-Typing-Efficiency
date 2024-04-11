@@ -16,7 +16,7 @@ BLUE = (0, 0, 255)
 SHAPE_RADIUS = 50
 FLASH_TIME = 1.0  # Time in seconds for each shape to flash
 PAUSE_TIME = 0.5  # Time in seconds to pause between flashes
-FEEDBACK_DISPLAY_TIME = 2.0  # Time in seconds to display feedback (Correct or Wrong)
+FEEDBACK_DISPLAY_TIME = 0.65  # Time in seconds to display feedback (Correct or Wrong)
 
 # Function to display text on the screen
 def display_text(screen, text, font, color, position):
