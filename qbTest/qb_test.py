@@ -88,6 +88,7 @@ def run_qb_test():
                     if current_color == RED:
                         feedback_message = "Correct!"
                         feedback_color = GREEN
+                        score += 1
                     else:
                         feedback_message = "Wrong!"
                         feedback_color = RED
