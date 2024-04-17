@@ -39,11 +39,37 @@ def run_qb_test():
     
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 36)
-    running = True
+    running = False
+    start_screen = True
     last_flash_time = time.time()  # Track the last time a shape was flashed
     last_feedback_time = 0.0  # Track the last time feedback was displayed
     flash_complete = True  # Flag to track if a flash cycle is complete
     feedback_displayed = False  # Flag to track if feedback is currently displayed
+    score = 0
+    start_time = time.time()
+    
+    while start_screen:
+        screen.fill(WHITE)
+        display_text(screen, "QB Test", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 4))
+        display_text(screen, "Press Space to Start", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2))
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                start_screen = False
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    start_screen = False
+                    running = True
+                    break
+
+        pygame.display.flip()
+        clock.tick(FPS)
+
+    last_flash_time = time.time()
+    last_feedback_time = 0.0
+    flash_complete = True
+    feedback_displayed = False
     score = 0
     start_time = time.time()
     
