@@ -51,8 +51,9 @@ def run_qb_test():
     while start_screen:
         screen.fill(WHITE)
         display_text(screen, "QB Test", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 4))
-        display_text(screen, "Press Space to Start", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2))
-
+        display_text(screen, "This test will exit on its own after 2 minutes.", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2 - 50))
+        display_text(screen, "Press Space to Start", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2 + 50))
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 start_screen = False
