@@ -88,11 +88,11 @@ def run_qb_test():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and not feedback_displayed:
                     if current_color == RED:
-                        #feedback_message = "Correct!"
+                        feedback_message = "Correct!"
                         feedback_color = GREEN
                         score += 1
                     else:
-                        #feedback_message = "Wrong!"
+                        feedback_message = "Wrong!"
                         feedback_color = RED
                     feedback_position = (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50)
                     last_feedback_time = current_time
@@ -103,7 +103,7 @@ def run_qb_test():
         elapsed_time = current_time - start_time
         if elapsed_time >= 120:  # 120 seconds = 2 minutes
             save_score(score)
-            display_text(screen, f"Game Over! Final Score: {score}", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2))
+            display_text(screen, f"Correct: {score}", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2))
             pygame.display.flip()
             pygame.time.wait(2000)  # Display final score for 2 seconds
             running = False
