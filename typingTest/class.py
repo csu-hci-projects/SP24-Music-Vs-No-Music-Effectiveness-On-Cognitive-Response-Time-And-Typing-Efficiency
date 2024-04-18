@@ -7,12 +7,14 @@ class gui(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.geometry("800x700+400+200") # Horizontal x Vertical
+        maxHeight = self.winfo_screenheight()
+        maxWidth = self.winfo_screenwidth()
+        self.geometry(f"{maxWidth}x{maxHeight}") # Horizontal x Vertical
         self.minsize(800, 700)
-        self.maxsize(1500, 800)
+
         self.title("Typing Test")
         self.config(padx=50, pady=10)
-        self.instructions = tk.Label(wraplength=700, justify='center',font=('Arial', 14), text = "Type the prompt. The timer starts at the first keystroke. To end the typing portion, use the mouse to hit done. The QB test will then start.") 
+        self.instructions = tk.Label(wraplength=700, justify='center',font=('Arial', 20), text = "Type the prompt. The timer starts at the first keystroke. To end the typing portion, use the mouse to hit done. The QB test will then start.") 
         self.instructions.pack() # add the label to the window
 
         self.file = tk.Button(self, text = "Get the Typing Test", command=self.getFile)
@@ -22,10 +24,13 @@ class gui(tk.Tk):
         # self.start.pack(side = "bottom", padx=10, pady=5)
 
         self.typingWindow = tk.Frame(width=200, height=40, padx=5, pady=5)
-        # self.typingWindow.place(x=100, y = 100)
-        self.typingWindow.pack(side = 'bottom')
+        # self.typingWindow.pack(side = 'bottom')
+        self.typingWindow.place(x=450, y = 300)
+        # self.typingWindow.pack(side = 'bottom')
+        # self.typingWindow.pack(expand=True)
+        # self.typingWindow.pack(fill='both')
 
-        self.typingArea = tk.Text(self.typingWindow, wrap='w', padx=5, pady=5, fg='black', bg='white', font='14')
+        self.typingArea = tk.Text(self.typingWindow, wrap='w', padx=5, pady=5, fg='black', bg='white', font='20')
         self.typingArea.pack()
 
         self.done = tk.Button(self, text='Done', command=self.checkResults)
@@ -58,7 +63,7 @@ class gui(tk.Tk):
             self.song = original
             self.inputWords = original.split()
             self.totalWords = len(self.inputWords)
-        label = tk.Label(self, text=original, font=('Arial', 14))
+        label = tk.Label(self, text=original, font=('Arial', 20))
         label.pack()
         self.file.destroy()
         self.userInput()
