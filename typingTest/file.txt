@@ -1,3 +1,0 @@
-accuracy,time
-A,t,t,e,m,p,t, ,t,o,o,k, ,0,0,:,0,0,:,4,8
-1,0,0,.,0,%, ,a,c,c,u,r,a,c,y

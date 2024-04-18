@@ -13,7 +13,7 @@ class gui(tk.Tk):
         self.maxsize(1500, 800)
         self.title("Typing Test")
         self.config(padx=50, pady=10)
-        self.instructions = tk.Label(wraplength=700, justify='center',font=('Arial', 14), text = "Type the prompt. The timer starts at the first keystroke. To end the typing portion, use the mouse to hit done. The QB test will then start.") 
+        self.instructions = tk.Label(wraplength=700, justify='center',font=('Arial', 14), text = "Type the prompt. The timer starts at the first keystroke. To end the typing portion, use the mouse to hit done.") 
         self.instructions.pack() # add the label to the window
 
         self.file = tk.Button(self, text = "Get the Typing Test", command=self.getFile)
@@ -77,15 +77,13 @@ class gui(tk.Tk):
         self.accuracy = (sum(1 for x,y in zip(self.inputWords, self.inputFromUser) if x ==y) / self.totalWords) * 100
         if self.accuracy < 100:
             accuracyLabel = tk.Label(self, text = f'{self.accuracy:.3}% accuracy', font=('Arial', 20))
-            # accuracyText = "accuracy"
             self.csv_file.append(accuracyLabel.cget("text"))
         else:
             accuracyLabel = tk.Label(self, text = f'{self.accuracy}% accuracy', font=('Arial', 20))
             self.csv_file.append(accuracyLabel.cget("text"))
         accuracyLabel.pack()
         self.typingArea.destroy()
-        print(self.csv_file)
-        saveButton = tk.Button(self,text="Save", command=self.save())
+        saveButton = tk.Label(self,text="Results Saved", font=('Arial', 20),  command=self.save())
         saveButton.pack()
 
     def checkResults(self):
@@ -98,22 +96,14 @@ class gui(tk.Tk):
 
     def save(self):
         with open("file.txt","a") as file:
-            Writer=writer(file)
-            Writer.writerow(["accuracy","time"])
-            Writer.writerows(self.csv_file)
-            self.remove_commas()
-
-    def remove_commas(self):
-        with open("file.txt", "r") as file:
-            commas = file.readlines()
-        with open("file.txt", "w") as file:
-            for c in commas:
-                c.strip(",")
-                file.write(c)
+            file.write("\n")
+            for item in self.csv_file:
+                help = item + " "
+                file.write(f'{help}')
+            file.write("\n")
 
 def main():
     one = gui()
-    # one.mainloop()
 
 if __name__ == '__main__':    
     main()
