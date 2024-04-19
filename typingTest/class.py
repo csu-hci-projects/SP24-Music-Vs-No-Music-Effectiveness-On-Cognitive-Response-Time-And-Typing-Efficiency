@@ -104,6 +104,11 @@ class gui(tk.Tk):
 
 def main():
     one = gui()
+    # one.mainloop()
+    two = gui()
+    three = gui()
+
+
 
 if __name__ == '__main__':    
     main()
