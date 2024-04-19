@@ -34,13 +34,14 @@ def save_score(score):
 
 # Main function to run the QB test
 def run_qb_test():
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
     pygame.display.set_caption("QB Test - Press Space for Red")
     
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 36)
     running = False
     start_screen = True
+    game_ended = False
     last_flash_time = time.time()  # Track the last time a shape was flashed
     last_feedback_time = 0.0  # Track the last time feedback was displayed
     flash_complete = True  # Flag to track if a flash cycle is complete
@@ -137,6 +138,26 @@ def run_qb_test():
 
         pygame.display.flip()  # Update display
         clock.tick(FPS)  # Cap the frame rate
+
+    while game_ended:
+        screen.fill(WHITE)
+        display_text(screen, "QB Test", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 4))
+        display_text(screen, "This test will exit on its own after 2 minutes.", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2 - 50))
+        display_text(screen, "Press Space to Start", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2 + 50))
+        for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    game_ended = False
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        game_ended = False
+                        running = True
+                        start_time = time.time()
+                        score = 0
+                        break
+
+        pygame.display.flip()
+        clock.tick(FPS)
+
 
     pygame.quit()  # Clean up resources
 
