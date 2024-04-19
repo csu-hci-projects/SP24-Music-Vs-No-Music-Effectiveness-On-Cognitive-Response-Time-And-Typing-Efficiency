@@ -42,12 +42,16 @@ def run_qb_test():
     running = False
     start_screen = True
     game_ended = False
+    max_tries = 3
+    num_tries = 0
     last_flash_time = time.time()  # Track the last time a shape was flashed
     last_feedback_time = 0.0  # Track the last time feedback was displayed
     flash_complete = True  # Flag to track if a flash cycle is complete
     feedback_displayed = False  # Flag to track if feedback is currently displayed
     score = 0
     start_time = time.time()
+    turn_start_time = start_time  # Track the start time of each turn
+    
     
     while start_screen:
         screen.fill(WHITE)
@@ -63,6 +67,8 @@ def run_qb_test():
                 if event.key == pygame.K_SPACE:
                     start_screen = False
                     running = True
+                    num_tries = 0
+                    score = 0
                     break
 
         pygame.display.flip()
@@ -79,6 +85,14 @@ def run_qb_test():
         screen.fill(WHITE)
 
         current_time = time.time()
+
+        # Check if current turn has exceeded 2 minutes
+        if current_time - turn_start_time >= 120:
+            # End the current turn and reset for the next
+            num_tries = 0
+            score = 0
+            turn_start_time = current_time
+        
 
         if flash_complete:
             # Generate a random color for the shape
@@ -115,6 +129,7 @@ def run_qb_test():
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and not feedback_displayed:
+                    num_tries += 1
                     if current_color == RED:
                         feedback_message = "Correct!"
                         feedback_color = GREEN
@@ -125,6 +140,14 @@ def run_qb_test():
                     feedback_position = (WIDTH // 2, HEIGHT // 2 + SHAPE_RADIUS + 50)
                     last_feedback_time = current_time
                     feedback_displayed = True
+
+        if num_tries >= max_tries:
+            save_score(score)
+            display_text(screen, f"Correct: {score}", font, (0, 0, 0), (WIDTH // 2, HEIGHT // 2))
+            pygame.display.flip()
+            pygame.time.wait(2000)
+            running = False
+            game_ended = True        
 
         # Check for game end condition (e.g., after 2 mins)
         current_time = time.time()
@@ -151,6 +174,7 @@ def run_qb_test():
                     if event.key == pygame.K_SPACE:
                         game_ended = False
                         running = True
+                        num_tries = 0
                         start_time = time.time()
                         score = 0
                         break
