@@ -19,6 +19,9 @@ For teams or in-person meetings:
 * 3/28 for 23 minutes
 * 4/08 for 30 minutes
 * 4/11 for 90 minutes
+* 4/16 for 180 minutes
+* 4/19 for 25 minutes
+* 4/23 for 75 minutes
 * messages in teams throughout the entire week of Monday - Friday since the team was formed.
 
 
