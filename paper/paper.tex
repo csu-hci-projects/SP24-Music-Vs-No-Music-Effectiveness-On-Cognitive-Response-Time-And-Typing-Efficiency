@@ -116,21 +116,30 @@ They were given the instructions in the GUI with the text area where their text 
 
 Following the typing test, participants proceeded to the cognitive task component of the study, which was also conducted under the three aforementioned conditions. While the participants did the cognitive task of a quantified behavioral test, their eye movement will be tracked by the EyeWriter 2.0 camera that we specially built for this study. The EyeWriter system consists of a camera mounted on the participant's laptop, which tracks eye movements and allows for precise measurement of gaze direction and fixation duration.
 
-Participants were seated in a comfortable position facing the laptop screen. They were instructed to follow a series of calibration points displayed on the screen to calibrate the eye-tracking system. This calibration process ensured accurate measurement of eye movements during the subsequent tasks.
+Participants were seated in a comfortable position facing the laptop screen. The laptop is placed on top of a laptop stand while the eye tracker
+is mounted on a wooden frame. While the eye tracker is on a moveable slider, it is centered in front of the screen. At the ends of the wooden
+frame are infrared lights that flashes at sixty frames per second. % will need to verify that it is 60 fps.
+Although not pictured, a bluetooth keyboard is used by the participant for the quantified behavioral test (QB test).
 
-During the cognitive task component of the study, participants performed a quantified behavioral test (QBTest) while their eye movements were tracked by the EyeWriter 2.0 camera mounted on the laptop. The QBTest is a computerized test designed to assess various aspects of cognitive function, including attention, impulsivity, and response control.
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{eyetracker_setup.png}
+  \caption{EyeWriter 2.0}
+  \Description{Image of the eye tracker setup}
+\end{figure}
+
+During the cognitive task component of the study, participants performed a QB test while their eye movements were tracked by the EyeWriter 2.0. The QBTest is a computerized test designed to assess various aspects of cognitive function, including attention, impulsivity, and response control.
 % Further details on the cognitive task will be provided in subsequent sections. They will then move on the the QBTest?. % This will need to be re-written.
 
 \subsection[short]{Participants}
-Approximately twenty participants were recruited from Colorado State University. Ten males and ten females all in the age range of 18-99. There were no %chktex 8
+Approximately eight participants were recruited from Colorado State University. NUMBER males and NUMBER females all in the age range of 18-99. There were no %chktex 8
 restrictions in regards to their major as long as they were able to type on a keyboard with no tilt on the keys.
 They have all previously either learned to type at primary school or through necessity.
 
-\subsection[short]{Equipment}  % Do we want to change this to Equipment? 
+\subsection[short]{Equipment} 
 % This may not need to be broken into subsections. Will decide before we resubmit. 
-Participants used two different MacBook Pros in this study due to the nature of the eye tracker setup although both were running on Sonoma or MacOS 14. One MacBook Pro was used to administer the QBTest, and it had the eye tracker mounted on it. The positioning of the eye tracker made it challenging to use this MacBook Pro for the typing test. 
+Participants used two different MacBook Pros in this study due to the nature of the eye tracker setup although both were running on Sonoma or MacOS 14. One MacBook Pro was used to administer the QBTest, and it had the eye tracker mounted on it. The positioning of the eye tracker made it challenging to use this MacBook Pro for the typing test and QB test. 
 
-QBTest MacBook Pro with Eye Tracker: This MacBook Pro was dedicated to conducting the QBTest. It had the eye tracker mounted on it, which made it difficult to access the keyboard for typing. Participants used this MacBook Pro for the QBTest to ensure that the eye tracker could accurately track their eye movements during the test.
+QBTest MacBook Pro with Eye Tracker: This MacBook Pro was dedicated to conducting the QBTest. It had the eye tracker mounted on it, which made it difficult to access the keyboard for typing. Participants used this MacBook Pro for the QBTest to ensure that the eye tracker could accurately track their eye movements during the test. A bluetooth keyboard was used as part of the QB test since the positioning of the Eye Writer mostly blocked the space bar.
 
 Typing Test MacBook Pro: The second MacBook Pro was used for the typing test. Since it did not have the eye tracker mounted on it, participants could easily access the keyboard and perform the typing test without any interference from the eye tracker.
 Using two separate MacBook Pros allowed for the independent administration of the QBTest and typing test, ensuring that participants could perform each task without any physical hindrance from the eye tracker.
@@ -143,6 +152,7 @@ These LEDs are also mounted on the laptop along with the IR camera.
 The mounting system holds the IR camera and IR LEDs in place relative to the participant's eye. 
 It ensures that the camera has a clear view of the eye for accurate tracking. 
 Cables are used to connect the IR camera and IR LEDs to the laptop. These cables transmit data and power between the components.
+An Arduino microcontroller allowed the computer to communicate with the camera, infrared LED lights, and computer.
 % \subsubsection{QB Test} 
 \subsubsection{Typing Test}
 The typing program was written in Python and compiled using Python3.9. While python can run on any device that has python installed, this study only used the two Macbook Pros. The singularity of the devices was used as the center of the screen for the typing test was hard coded when setting the starting position of the window for the typing test. 
