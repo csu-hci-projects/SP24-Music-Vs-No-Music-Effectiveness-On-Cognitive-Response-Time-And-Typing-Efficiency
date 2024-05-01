@@ -1,0 +1,6 @@
+
+Attempt took 00:00:54 17.6% accuracy 
+
+Attempt took 00:01:21 95.9% accuracy 
+
+Attempt took 00:01:21 95.0% accuracy 
