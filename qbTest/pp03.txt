@@ -1,0 +1,9 @@
+34
+28
+26
+typing:
+Attempt took 00:01:22 100.0% accuracy 
+
+Attempt took 00:01:10 100.0% accuracy 
+
+Attempt took 00:00:58 95.0% accuracy 
