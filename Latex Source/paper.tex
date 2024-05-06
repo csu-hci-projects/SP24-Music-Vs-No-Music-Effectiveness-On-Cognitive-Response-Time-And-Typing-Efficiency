@@ -56,27 +56,27 @@ The abstract does not get added until after the project is finished or nearly fi
 This project will focus on people's ability to type with distractions such as different types of music playing. 
 It will then test their cognitive ability to focus on a hand/eye coordination test in which we will test how well they can match shapes by measuring speed and accuracy. 
 The two-part test aims to help test if the music is too distracting or will help the people be more efficient at their work. 
-This is important because many people do their homework or jobs while listening to music and should they make a mistake, it could end up costing someone their grade or the mistake at work has a cascading effect to cause more errors in their work. 
-The two-part test will help determine if there is a correlation between the effectiveness of music versus no music on cognitive response time and typing efficiency.
+This is important because many people do their homework or jobs while listening to music and should they make a mistake, it could end up costing someone their grade or the mistake at work has a cascading effect to cause more errors. According to the arousal-mood hypothesis, changes in arousal and mood when exposed to auditory stimulation can influence cognitive function \cite{Chee}.
+The two-part test will help determine if there is a correlation between the effectiveness of music versus no music on cognitive response time and typing efficiency. 
 
 \subsection{Eye Tracking}
-Eye tracking technology, such as the EyeWriter 2.0, has become increasingly valuable in cognitive research, allowing for precise measurement and analysis of visual attention and eye movements. 
+Eye tracking technology, such as the EyeWriter 2.0, has become increasingly valuable in cognitive research, allowing for precise measurement and analysis of visual attention and eye movements \cite{Rana8642988}. 
 In this study, we incorporate the EyeWriter 2.0 to track participants' eye movements during the QBTest, a hand-eye coordination task.
-The EyeWriter 2.0 offers high-resolution tracking, capturing gaze patterns and fixations with accuracy. 
-By analyzing participants' eye movements during the QBTest under different music conditions, we aim to understand how distractions, such as music, influence visual attention and cognitive performance.
+The EyeWriter 2.0 offers high-resolution tracking, accurately capturing gaze patterns and fixations.
+As Chen \cite{Chen23876} points out while exploring the relationships between distractibility and Eye Tracking during online learning assessments they found significant differences between more distractions meant more distracted eyes. We believe by analyzing participants' eye movements during the QBTest under different music conditions, we aim to understand how distractions, such as music, influence visual attention and cognitive performance.
 Understanding the impact of music on cognitive response time and typing efficiency, as measured by the QBTest and eye tracking, can provide valuable insights for improving work and study environments where music is commonly used as a background stimulus.
 
 \subsection{QBTest}
-The Quantified Behavioral Test (QBTest) is a well-established tool for assessing cognitive function, particularly in measuring hand-eye coordination, speed, and accuracy.
-Developed as a standardized measure, the QBTest provides valuable insights into cognitive performance across different tasks and conditions. % This would be a good place to put a citation.
+The Quantified Behavioral Test (QBTest) is a well-established tool for assessing cognitive function, particularly in measuring hand-eye coordination, speed, and accuracy. It is usually used to diagnose ADHD in adults and children as mentioned by \cite{Stevanovic} Stevanovic in their study of 'The Structure and Diagnostic Accuracy of the QbTest in Pediatric ADHD.
+Developed as a standardized measure, the QBTest provides valuable insights into cognitive performance across different tasks and conditions.
 In this study, the QBTest serves as a central component for evaluating participants' cognitive response time and typing efficiency under various music conditions.
 By administering the QBTest alongside eye tracking using EyeWriter 2.0, we aim to understand the impact of music on cognitive function and task performance.
-The QBTest's ability to quantify cognitive performance makes it an ideal tool for this study, allowing us to measure the effects of music on participants' ability to focus, process information, and perform tasks accurately. 
+The QBTest's ability to quantify cognitive performance makes it an ideal tool for this study, allowing us to measure the effects of music on participants' ability to focus, process information, and perform tasks fairly accurately. It is also important to understand that it is not completely accurate as discussed by Hult \cite{Hult}.
 Through this research, we seek to provide insights that can enhance our understanding of how environmental factors, such as music, influence cognitive processes.
 
 \subsection{Typing Test}
 Typing proficiency is a fundamental skill in today's digital age, essential for academic and professional success. 
-However, various factors can influence typing efficiency, including environmental stimuli such as music. Understanding how music affects typing speed and accuracy is crucial for optimizing work and study environments.
+However, various factors can influence typing efficiency, including environmental stimuli such as music Silverberg \cite{AudioDistractionsAshley} found that the results of their typing test showed that although there was a significant difference in the times between paragraphs, there were no significant differences in typing speed between the audio distractions being played. Understanding how music affects typing speed and accuracy is crucial for optimizing work and study environments.
 This study uses a typing test to assess participants' typing performance under different music conditions. 
 The test presents participants with lyrics from popular songs, simulating a real-world typing scenario where individuals may listen to music while working or studying.
 By measuring typing speed and accuracy under conditions of music with lyrics, music without lyrics, and no music (silent condition), we aim to determine the impact of music on typing efficiency. 
@@ -105,7 +105,7 @@ The study done through Kiss and Linnell~\cite{kiss2021effect} saw opposite resul
 The results from Mathew~\cite{mathew2022inherently} were split. 
 The music was a detriment for logic puzzles in the user's accuracy but aided in the efficiency of a writing task. 
 According to Bramwell-Dicks et al., the instrumental music used in their study had better results on typists in speed and accuracy whereas music with vocals, the participants fared worse~\cite{bramwell2016can}.
-While only a quasi-experiment, Oldham et al., found that personal headphones and Walkmans for employees had a postive correlation if the job complexity was not complex but also that employee satisfaction at this company was higher if they were allowed to use their walkman while working~\cite{oldhamListen}. Dobbs et al., also found the correlation that while music produced lower scores than silence it was better than just ``noise''~\cite{effectsOfBackgroundDobbs}.
+While only a quasi-experiment, Oldham et al., found that personal headphones and Walkmans for employees had a positive correlation if the job complexity was not complex but also that employee satisfaction at this company was higher if they were allowed to use their walkman while working~\cite{oldhamListen}. Dobbs et al., also found the correlation that while music produced lower scores than silence it was better than just ``noise''~\cite{effectsOfBackgroundDobbs}.
 
 \subsection{Eye Tracking and Quantified Behavioral Test}
 
@@ -137,7 +137,7 @@ The singularity of the devices was used as the center of the screen for the typi
 \subsubsection{Quantified Behavioral Test}
 The Quantified Behavioral Test program was written in Python and compiled using Python3.9.
 The package pygame was used for this interface compared to the package tkinter used for the typing test.
-The bluetooth keyboard allowed the participant to hit the space bar when the QBTest said to hit the space bar.
+The Bluetooth keyboard allowed the participant to hit the space bar when the QBTest said to hit the space bar.
 
 \subsection[short]{Procedure}
 Each participant was instructed to read and then sign the consent form. While the consent form had the basis of what they would be doing, they were given more detail as to the instructions when they were ready to begin.
@@ -146,10 +146,10 @@ This setup also made it simple for the music component as the participants did e
 (e.g. typing test then QBTest without having to change the music or swapping to no music)
 before moving on to the next level. 
 Because of the way that the heatmap was coded, we had to make sure that each level was done in the same order for all the participants.
-We made sure to always do instrumental music, lyrical music, then no music. 
+We made sure to always do instrumental music, lyrical music, and then no music. 
 
 \subsection[short]{Participants}
-Tweleve participants were recruited from Colorado State University or Fort Collins, Colorado. Two males and eight females all in the age range of 18-23. There were no restrictions in regards to their major as long as they were able to type on a keyboard with no tilt on the keys.
+Twelve participants were recruited from Colorado State University or Fort Collins, Colorado. Two males and eight females all in the age range of 18-23. There were no restrictions in regards to their major as long as they were able to type on a keyboard with no tilt on the keys.
 They have all previously either learned to type at primary school or through necessity.
 
 \subsection[short]{Design}
@@ -157,7 +157,7 @@ After obtaining consent from all participants, they proceeded to take the typing
 The interface automatically calculated typing accuracy and the time the attempt took in the program's backend, allowing participants to focus solely on completing the test.
 Each participant completed the typing test under three conditions: music with lyrics, music without lyrics, and no music (silent condition).
 Multiple levels of music intensity were utilized within each condition to assess varying degrees of distraction.
-The GUI of the typing test was built with simplicity in mind. The starting window was pulled up so as not to confuse participants with the code as seen in Figure \ref*{typingTest}a. The participants saw Figure \ref*{typingTest}b while the test is running, while Figure \ref*{typingTest}c is the signifier that the typing portion is finished. 
+The GUI of the typing test was built with simplicity in mind. The starting window was pulled up so as not to confuse participants with the code as seen in Figure \ref*{typingTest}a. The participants saw Figure \ref*{typingTest}b while the test was running, while Figure \ref*{typingTest}c was the signifier that the typing portion was finished. 
 
 \begin{figure}
   \includegraphics[width=\textwidth]{typingTest}
@@ -177,7 +177,7 @@ The EyeWriter system consists of a camera mounted on the participant's laptop, w
 Participants were seated in a comfortable position facing the laptop screen.
 The laptop is placed on top of a laptop stand while the eye tracker is mounted on a wooden frame. 
 While the eye tracker is on a moveable slider, it is centered in front of the screen. 
-At the ends of the wooden frame are infrared lights that flashes at sixty frames per second. % WILL NEED TO VERIFY THAT IT IS 60 FPS
+At the ends of the wooden frame are infrared lights that flash at sixty frames per second. % WILL NEED TO VERIFY THAT IT IS 60 FPS
 Although not pictured, a bluetooth keyboard is used by the participant for the quantified behavioral test (QBTest).
 
 \begin{figure}
