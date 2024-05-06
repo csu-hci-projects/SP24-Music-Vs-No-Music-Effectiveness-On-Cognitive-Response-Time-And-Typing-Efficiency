@@ -169,15 +169,15 @@ After obtaining consent from all participants, they proceeded to take the typing
 The interface automatically calculated typing accuracy and the time the attempt took in the program's backend, allowing participants to focus solely on completing the test.
 Each participant completed the typing test under three conditions: music with lyrics, music without lyrics, and no music (silent condition).
 Multiple levels of music intensity were utilized within each condition to assess varying degrees of distraction.
-The GUI of the typing test was built with simplicity in mind. The starting window was pulled up so as not to confuse participants with the code as seen in Figure \ref*{typingTest}a. The participants saw Figure \ref*{typingTest}b while the test was running, while Figure \ref*{typingTest}c was the signifier that the typing portion was finished. 
-
+The GUI of the typing test was built with simplicity in mind. The starting window was pulled up so as not to confuse participants with the code as seen in Figure~\ref*{typingTest}a. The participants saw Figure~\ref*{typingTest}b while the test was running, while Figure~\ref*{typingTest}c was the signifier that the typing portion was finished. 
 
 They were given the instructions in the GUI with the text area where their text is clearly visible and the only button in the window to start the test and timer. 
 After they hit the ``Get the Typing Test'' button, the lyrics of the randomly selected songs were displayed for the user to type. 
 The text box for the users was already in focus with a ``Done'' button. After the users hit ``Done'', their accuracy and speed were presented.
 
 \begin{figure}
-  \includegraphics[width=0.5\textwidth]{eyetracker_setup.png}
+  \center
+  \includegraphics[width=0.4\textwidth]{eyetracker_setup.png}
   \caption{EyeWriter 2.0 Setup}
   \Description{Image of the eye tracker setup}
   \label{EyeWriter}
@@ -185,7 +185,7 @@ The text box for the users was already in focus with a ``Done'' button. After th
 
 Following the typing test, participants proceeded to the cognitive task component of the study, which was also conducted under the three aforementioned conditions. 
 While the participants did the cognitive task of a quantified behavioral test, their eye movement will be tracked by the EyeWriter 2.0 camera that we specially built for this study. 
-The EyeWriter 2.0 system consists of a camera mounted on the participant's laptop, which tracks eye movements and allows for precise measurement of gaze direction and fixation duration. This can be seen in Figure \ref*{EyeWriter}.
+The EyeWriter 2.0 system consists of a camera mounted on the participant's laptop, which tracks eye movements and allows for precise measurement of gaze direction and fixation duration. This can be seen in Figure~\ref*{EyeWriter}.
 
 Participants were seated in a comfortable position facing the laptop screen.
 The laptop is placed on top of a laptop stand while the eye tracker is mounted on a wooden frame. 
@@ -202,9 +202,9 @@ Although not pictured, a bluetooth keyboard is used by the participant for the q
 
 During the cognitive task component of the study, participants performed a Quantified Behavioral test or QBTest while their eye movements were tracked by the EyeWriter 2.0.
 The QBTest is a computerized test designed to assess various aspects of cognitive function, including attention, impulsivity, and response control.
-The user will then see Figure \ref*{QBTest}. Figure \ref*{QBTest}a is the screen that will be displayed before the participant is ready to begin the QBTest.
-Figure \ref*{QBTest}b is what the user will see during the test. Figure \ref*{QBTest}b also displays what the user will see when they are correct and incorrect.
-Figure \ref*{QBTest}c displays for only two minutes but shows the user their score.
+The user will then see Figure~\ref*{QBTest}. Figure~\ref*{QBTest}a is the screen that will be displayed before the participant is ready to begin the QBTest.
+Figure~\ref*{QBTest}b is what the user will see during the test. Figure~\ref*{QBTest}b also displays what the user will see when they are correct and incorrect.
+Figure~\ref*{QBTest}c displays for only two minutes but shows the user their score.
 % MAYBE ADD MORE ABOUT THE QBTEST?
 
 \section{Results and Discussion}
@@ -212,7 +212,18 @@ Within-subjects testing was used for our ten participants. Individually the typi
 % WHATEVER TYPE OF TESTING IS USED (ANOVA)
 the ANOVA from the heatmap with the eyetracker, the results were statistically significant. %sounds clunky might change
 The ANOVA for the typing test was done twice for the dependent variables, time and accuracy, as GoStats did not allow for multiple 
-dependent variables. Both were not statistically significant although their \textit{p} values were different.
+dependent variables. 
+While not statistically significant, the \textit{p} value for time was 0.1172 whereas the \textit{p} value for accuracy was 0.2334.
+The bar graph for time in seconds for the typing test was quite telling. The condition for no music was consistently faster than both
+lyrical music and instrumental music.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{time}
+  \caption{Time (s) of participants for typing test}
+  \Description{Bar graph for participants in seconds}
+  \label{time}
+\end{figure}
 
 \section{Conclusion and Future Works}
 Conclusion
