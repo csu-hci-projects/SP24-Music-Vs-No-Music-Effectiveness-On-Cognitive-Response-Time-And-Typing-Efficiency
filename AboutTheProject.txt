@@ -1,0 +1,2 @@
+Jonquill worked on the typing test and the paper.
+Shea worked on the eyetracker and qbtest.
