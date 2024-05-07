@@ -8,7 +8,9 @@ Using Python3.9, the package tkinter should already be installed.
 To run the program, the user should be in the folder called typingTest and call python3 class.py 
 
 We ran our Latex locally so we do not have an Overleaf link.
-* Youtube link: [https://youtu.be/FlhF1GsQyts ](https://youtu.be/JxySD7mxmlA)
+* Youtube link for checkpoint 1: [https://youtu.be/FlhF1GsQyts ](https://youtu.be/JxySD7mxmlA)
+* Youtube link for Demo+Code: [https://youtu.be/89KlvwiZvzg] (https://youtu.be/89KlvwiZvzg)
+* Youtube link for Short Video [https://youtu.be/ERqWHoYtCIY] (https://youtu.be/ERqWHoYtCIY)
 
 For teams or in-person meetings:
 * 2/06 for 60 minutes
@@ -24,14 +26,6 @@ For teams or in-person meetings:
 * 4/23 for 75 minutes
 * 4/30 for 120 minutes
 * 5/02 for 75 minutes
+* 5/06 for 120 minutes
 * messages in teams throughout the entire week of Monday - Friday since the team was formed.
 
-
-Jonquill worked on the typing test.
-Shea worked on the eye tracker of putting it together physically and the code for the eye tracker.
-Jonquill and Shea both worked on the paper.
-
-For future contributions:
-Jonquill and Shea will both work on the paper.
-Shea will finish the eye tracker.
-Jonquill will work on qb test and start the procedure for actually recruiting participants.
