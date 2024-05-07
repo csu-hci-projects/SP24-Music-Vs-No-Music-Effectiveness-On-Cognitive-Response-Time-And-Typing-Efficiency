@@ -6,6 +6,8 @@ A user will take a typing test with while wearing glasses that track eye movemen
 
 Using Python3.9, the package tkinter should already be installed. 
 To run the program, the user should be in the folder called typingTest and call python3 class.py 
+To run the code use: python3 qb_test.py
+To install pygame use(if on linux): pip3 install --user pygame
 
 We ran our Latex locally so we do not have an Overleaf link.
 * Youtube link for checkpoint 1: [https://youtu.be/FlhF1GsQyts ](https://youtu.be/JxySD7mxmlA)
